@@ -63,7 +63,7 @@ Debido a un problema con la versión de centos:7, se agregó una línea más par
 <img width="1870" height="1065" alt="screenshot-2026-10-17_10-09-46" src="https://github.com/user-attachments/assets/d69007de-8212-48d0-9814-a342a3aa4086" />
 
 **Modificar el archivo index.html para incluir su nombre y luego crear una nueva versión de la imagen anterior**
-**¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen**
+**¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen?**
 Se ejecutó la misma cantidad de pasos: 5 pasos. También, se observó que el proceso de creación fue mucho más rápido y que en lugar de aparecer las instrucciones como: RUN, FROM, ENV; aparece la instrucción CACHED. La única instrucción que no tiene la palabra CACHED es COPY puesto que se modificó el archivo index.html.
 
 ## Mecanismo de caché
