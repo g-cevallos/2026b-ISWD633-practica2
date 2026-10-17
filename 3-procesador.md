@@ -10,7 +10,10 @@ Asignar núcleos de CPU específicos:
 ```
 
 **¿Como saber el numero de procesadores virtuales que tiene una máquina?**
-## COMPLETAR
+Depende del sistema operativo del host: 
+- En linux se usa el comando nproc que imprime el número total de núcleos lógicos.
+- En windows se puede usar echo %NUMBER_OF_PROCESSORS% en el CMD.
+- En macOs se puede usar sysctl -n hw.logicalcpu.
 
 ## Ejemplos
 _Puedes copiar y ejecutar directamente cada uno de los comandos_
