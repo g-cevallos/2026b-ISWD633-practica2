@@ -53,17 +53,18 @@ docker build -t <nombre imagen>:<tag> .
 ### Ejecutar el archivo Dockerfile y construir una imagen en la versión 1.0
 No olvides verificar en qué directorio se encuentra el archivo Dockerfile
 ```
-
+docker build -t socentos:1.0 .
 ```
 
 **¿Cuántos pasos se han ejecutado?**
-# RESPONDER 
+Debido a un problema con la versión de centos:7, se agregó una línea más para poder crear la imagen. Por lo tanto, se han ejecutado 5 pasos.
 
 ### Inspeccionar la imagen creada
-# COMPLETAR CON UNA CAPTURA
+<img width="1870" height="1065" alt="screenshot-2026-10-17_10-09-46" src="https://github.com/user-attachments/assets/d69007de-8212-48d0-9814-a342a3aa4086" />
 
 **Modificar el archivo index.html para incluir su nombre y luego crear una nueva versión de la imagen anterior**
 **¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen**
+Se ejecutó la misma cantidad de pasos: 5 pasos. También, se observó que el proceso de creación fue mucho más rápido y que en lugar de aparecer las instrucciones como: RUN, FROM, ENV; aparece la instrucción CACHED. La única instrucción que no tiene la palabra CACHED es COPY puesto que se modificó el archivo index.html.
 
 ## Mecanismo de caché
 Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso de construcción y evitar la repetición de pasos que no han cambiado. Cada instrucción en un Dockerfile crea una capa en la imagen final. Docker intenta reutilizar las capas de una construcción anterior si no han cambiado, lo que reduce significativamente el tiempo de construcción.
@@ -75,14 +76,14 @@ Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso
 
 ### Crear un contenedor a partir de las imagen creada, mapear todos los puertos
 ```
-
+docker run -d --name miapache socentos:1.0
 ```
 
 ### ¿Con que puerto host se está realizando el mapeo?
-# COMPLETAR CON LA RESPUESTA
+Se está realizando con el puerto 32768.
 
 **¿Qué es una imagen huérfana?**
-# COMPLETAR CON LA RESPUESTA
+Una imagen huérfana es aquella que ha perdido su nombre y etiqueta, por lo tanto no está asociada a ningún contenedor. Esto ocurre comúnmente cuando se construye una nueva imagen utilizando un nombre y una etiqueta que ya estaban asignados a una imagen anterior.
 
 ### Identificar imágenes huérfanas
 ```
